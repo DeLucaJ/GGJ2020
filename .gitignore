@@ -59,4 +59,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Testing Scene Files
-[Aa]ssets/Scenes/_*.unity
+[Aa]ssets/Scenes/_*
