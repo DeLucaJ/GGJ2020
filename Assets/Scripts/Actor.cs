@@ -6,6 +6,8 @@ public class Actor : MonoBehaviour
 {
     public Character character;
 
+    [SerializeField]
+    private SpriteRenderer sr;
     private Transform playerTransform;
 
     // Start is called before the first frame update
