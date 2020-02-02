@@ -18,16 +18,20 @@ VAR fabmafio = 0
 VAR stonckmafio = 0
 VAR mafiaquesthandler =0
 VAR economyrestarted = 0
+VAR mafiadoor =0
+VAR flapdoor = 0
+VAR dondoor = 0
 LIST inventory = feather, sweat, dress
 
 LIST machineparts = Atomic_Flange, Enriched_Plutonium_Gasket, Flapper_Seal, Temporal_Fill_Valve, Time_Tommy_Gun
 
-
-
 ->start
 
 ===start===
-
+{
+-WaterComplete ==1 && FlapComplete ==1:
+~mafiadoor =1
+}
 +[End Conversation]->NoHUD
 
 
@@ -117,10 +121,11 @@ Tell the Doctor I said hi if you see him.
 ->start
 
 =JobComplete
-What, you actually managed to get the others to help? Wow, that's the best news I've had since I learned I didn't have to do my job any more.
+~machineparts += Enriched_Plutonium_Gasket
+What, you actually managed to get the others to help? Wow, that's the best news I've had since I learned I didn't have to do my job any more. I can't really pay you - guess you can take this. It's a piece of junk that came off the thing that destroyed the stock exchange
 ~StonksComplete = 1
 
-+[Medium Michael's quitting. He said he wants to fish.]->Mike
++[Thanks. Medium Michael's quitting. He said he wants to fish.]->Mike
 
 =Mike
 Mike's quitting? Rats, he's our best fisherman. Oh, well, I guess we're all going to have to learn to fend for ourselves anyway, what with the economy crashing and all. Oh, and let me get the door for you.
@@ -505,7 +510,7 @@ Oh, I suppose every girl wants to go out and see what's out there after a little
 ==FlapGuard
 ~ speaker = "Flapper Guard"
 {
--FlapDisguise ==0:
+-inventory !=dress:
 ->FlapMad
 -else:
 ->FlapApprove
@@ -515,6 +520,7 @@ My word, darling, you're much too drab. I don't foresee you EVER being invited t
 ->start
 
 =FlapApprove
+~flapdoor = 1
 Darling, your dress is GORGEOUS! Goodness, why aren't you inside already? Go on, go on!
 ->start
 
@@ -840,6 +846,7 @@ Ya found me three new mafios? Well blame! They said it couldn't happen!
 =QuestRealDone
 ~mafiaquesthandler = 1
 ~inventory += Enriched_Plutonium_Gasket
+~dondoor = 1
 Here's that mechanical part I talked about - make good use'a it. Also, the Don wants t' see ya - don't leave him waitin'!
 ->start
 

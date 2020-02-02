@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Squatter
   sceneName: Squat7
-  voices: []
+  voices:
+  - {fileID: 8300000, guid: cfd1db6457515144ca07053e6c661381, type: 3}
+  - {fileID: 8300000, guid: d77af8285bcc9ad4a943b223ed940061, type: 3}
+  - {fileID: 8300000, guid: 090b3243a338aa04b80d0e6dfe744749, type: 3}
+  - {fileID: 8300000, guid: 8971a9192a580b44a96d13e1b4738d75, type: 3}

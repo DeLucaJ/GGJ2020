@@ -15,8 +15,7 @@ public class StoryManager : MonoBehaviour
     public bool showingUI = false;
 
     // UI Prefabs
-    [SerializeField]
-    private InventoryManager im;
+    public InventoryManager im;
     [SerializeField]
     private Interactor player;
     [SerializeField]

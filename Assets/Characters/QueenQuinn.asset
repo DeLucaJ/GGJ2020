@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Queen Quinn
   sceneName: QueenQuinn
-  voices: []
+  voices:
+  - {fileID: 8300000, guid: 86d746f09c2a54645935519b9f1d238f, type: 3}
+  - {fileID: 8300000, guid: 4a62f6e5234ccbc4992e49a18776b5d6, type: 3}
+  - {fileID: 8300000, guid: 20cb653fc65a09544ad1da4e8c25b52f, type: 3}
+  - {fileID: 8300000, guid: b76b8e73dca4e6b4a955a508793e2416, type: 3}
