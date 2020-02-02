@@ -89,10 +89,10 @@ public class StoryManager : MonoBehaviour
     public void LoadSpeaker()
     {
         speakerbox.text = (string)story.variablesState["speaker"];
-        Debug.Log(speakerbox.text);
+        //Debug.Log(speakerbox.text);
         if (speakerbox.text == "null")
         {
-            Debug.Log(speakerbox.text == "null");
+            //Debug.Log(speakerbox.text == "null");
             ShowUI(false);
         }
         //speakerbox.text = speaker;
