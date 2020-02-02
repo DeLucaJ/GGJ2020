@@ -60,6 +60,7 @@ public class Interactor : MonoBehaviour
         {
             Actor actor = hit.collider.GetComponent<Actor>();
             Teleporter tp = hit.collider.GetComponent<Teleporter>();
+            Pickup p = hit.collider.GetComponent<Pickup>();
             if (actor != null && Input.GetKeyDown(interact_key))
             {
                 EnterConversation(actor);
@@ -67,6 +68,10 @@ public class Interactor : MonoBehaviour
             if (tp != null && Input.GetKeyDown(interact_key))
             {
                 Teleport(tp.destination.position, tp.canTeleport);
+            }
+            if (p!= null && Input.GetKeyDown(interact_key))
+            {
+                p.PickupItem();
             }
         }
     }
