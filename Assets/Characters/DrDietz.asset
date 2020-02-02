@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Doctor Dietz
   sceneName: SquatterKing
-  voices: []
+  voices:
+  - {fileID: 8300000, guid: 9be73fadca84ae9458790fcc7d760f04, type: 3}
+  - {fileID: 8300000, guid: 97d7b47b467af90448881c184f0c9b12, type: 3}
+  - {fileID: 8300000, guid: ed26347882eead546b1f51c36f87c456, type: 3}
+  - {fileID: 8300000, guid: f930858bcf06f894494310b3dfec30a3, type: 3}

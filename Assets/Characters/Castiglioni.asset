@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Capo Castiglioni
   sceneName: Castiglioni
-  voices: []
+  voices:
+  - {fileID: 8300000, guid: 8f7a79efe57aa3147ab7bc509434f6b3, type: 3}
+  - {fileID: 8300000, guid: f49f5417ef6082f4d820bbd521815ff7, type: 3}
+  - {fileID: 8300000, guid: 3b2d855813cb2894d9697d1f4b2bc5e3, type: 3}
+  - {fileID: 8300000, guid: aaea799bed1864c499b085c08df11e85, type: 3}

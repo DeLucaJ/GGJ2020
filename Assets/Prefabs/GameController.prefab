@@ -149,6 +149,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 1323257570339287492, guid: 3c49889598c7b774d9b0a2075a1603b7,
+        type: 3}
+      propertyPath: storyManager
+      value: 
+      objectReference: {fileID: 6924544708981638252}
     - target: {fileID: 2642911638323024773, guid: 3c49889598c7b774d9b0a2075a1603b7,
         type: 3}
       propertyPath: m_SizeDelta.x

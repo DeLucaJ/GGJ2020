@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 11400000, guid: cf04e2bb3add93a4d9c90acc68eba833, type: 2}
-  sr: {fileID: 3958049240496612883}
+  audioSource: {fileID: 6308548207631120676}
 --- !u!65 &3958049240496612881
 BoxCollider:
   m_ObjectHideFlags: 0
