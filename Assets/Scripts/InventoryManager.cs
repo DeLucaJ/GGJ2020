@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventory = new InkList("inventory", storyManager.story);
+        inventory = storyManager.story.variablesState["inventory"] as InkList;
         Debug.Log(inventory.Count);
     }
 
