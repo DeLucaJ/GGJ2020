@@ -35,11 +35,11 @@ public class StoryManager : MonoBehaviour
         }
     }
 
-    public string LoadChunk(string knot)
+    public void LoadChunk(string knot)
     {
         Debug.Log(knot);
         story.ChoosePathString(knot);
-        return NextChunk();
+        RefreshViews();
     }
 
     void StartStory()

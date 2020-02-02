@@ -60,3 +60,4 @@ crashlytics-build.properties
 
 # Testing Scene Files
 [Aa]ssets/Scenes/_*
+[Aa]ssets/Ink/_*
