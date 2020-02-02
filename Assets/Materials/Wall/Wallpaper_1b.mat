@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TradingFloor_Tile
+  m_Name: Wallpaper_1b
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _NORMALMAP _PARALLAXMAP
+  m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: -2625303165649850758, guid: 02152f7976fedc946bcd5f16515249f1,
+        m_Texture: {fileID: -1945156181898327699, guid: f6c5fb6a7ec5b124c9c35c276ebc5296,
           type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -38,23 +38,25 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 7, y: 5}
+        m_Scale: {x: 3, y: 1.5}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8883884124937769516, guid: 02152f7976fedc946bcd5f16515249f1,
+        m_Texture: {fileID: -378853585204725419, guid: f6c5fb6a7ec5b124c9c35c276ebc5296,
           type: 3}
-        m_Scale: {x: 7, y: 5}
+        m_Scale: {x: 3, y: 1.5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 4883079507920145043, guid: f6c5fb6a7ec5b124c9c35c276ebc5296,
+          type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: b70578b0c62b74494a9f9e4e8d29d48a, type: 3}
+        m_Texture: {fileID: 8011870253759266558, guid: f6c5fb6a7ec5b124c9c35c276ebc5296,
+          type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: -1911988398281262019, guid: 02152f7976fedc946bcd5f16515249f1,
+        m_Texture: {fileID: 6950072221576267339, guid: f6c5fb6a7ec5b124c9c35c276ebc5296,
           type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -64,12 +66,11 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.85
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MapScale: 15
     - _Metallic: 0
     - _Mode: 0
-    - _OcclusionStrength: 0.794
+    - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
