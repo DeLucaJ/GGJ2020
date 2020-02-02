@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Stonk Broker
   sceneName: Stonk5
-  voices: []
+  voices:
+  - {fileID: 8300000, guid: f68430b256a772e44991c2776c03f74a, type: 3}
+  - {fileID: 8300000, guid: 114153f97fa7e0a4185f318dcbe5b004, type: 3}
+  - {fileID: 8300000, guid: d2d0808ea2949aa4f92f10e059953614, type: 3}
+  - {fileID: 8300000, guid: 8e0fffa4f033f954cad79db513886fba, type: 3}
