@@ -30,6 +30,18 @@ public class Interactor : MonoBehaviour
         controller.FreeCursor(value);
     }
 
+    void Teleport(Vector3 position, bool cantp)
+    {
+        if(cantp) transform.position = position;
+    }
+
+    void EnterConversation(Actor actor)
+    {
+        //Debug.Log(actor.character.name);
+        storyManager.ShowUI(true);
+        storyManager.LoadChunk(actor.character.sceneName);
+    }
+
     void SelectActor()
     {
         Ray selector = camera.ViewportPointToRay(Vector3.one / 2f);
@@ -37,11 +49,14 @@ public class Interactor : MonoBehaviour
         if (Physics.Raycast(selector, out hit, raydistance, layerMask))
         {
             Actor actor = hit.collider.GetComponent<Actor>();
+            Teleporter tp = hit.collider.GetComponent<Teleporter>();
             if (actor != null && Input.GetKeyDown(interact_key))
             {
-                Debug.Log(actor.character.name);
-                storyManager.ShowUI(true);
-                storyManager.LoadChunk(actor.character.sceneName);
+                EnterConversation(actor);
+            }
+            if (tp != null && Input.GetKeyDown(interact_key))
+            {
+                Teleport(tp.destination.position, tp.canTeleport);
             }
         }
     }
