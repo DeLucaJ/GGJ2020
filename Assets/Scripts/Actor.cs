@@ -24,6 +24,11 @@ public class Actor : MonoBehaviour
 
     void FacePlayer()
     {
-        transform.LookAt(playerTransform);
+        Vector3 lookPos = playerTransform.position - transform.position;
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = rotation; // Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+
+        //transform.LookAt(playerTransform);
     }
 }
