@@ -253,6 +253,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8660529908990290367, guid: d0b2faa44582849409a392f80a839977,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f934e6203e4b24642b70c4d8180026e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2faa44582849409a392f80a839977, type: 3}
 --- !u!1 &46932030
@@ -510,7 +515,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b067c7872464dc4a9ee6b552d1e0f3d, type: 2}
+  - {fileID: 2100000, guid: 829b6fa870887cb479f38a371a1a0dc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -714,6 +719,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8660529908990290367, guid: d0b2faa44582849409a392f80a839977,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f934e6203e4b24642b70c4d8180026e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2faa44582849409a392f80a839977, type: 3}
 --- !u!4 &223512351 stripped
@@ -820,7 +830,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 829b6fa870887cb479f38a371a1a0dc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1299,7 +1309,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 829b6fa870887cb479f38a371a1a0dc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1503,6 +1513,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8660529908990290367, guid: d0b2faa44582849409a392f80a839977,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f934e6203e4b24642b70c4d8180026e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2faa44582849409a392f80a839977, type: 3}
 --- !u!1 &698873064
@@ -1569,7 +1584,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 829b6fa870887cb479f38a371a1a0dc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1959,6 +1974,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8660529908990290367, guid: d0b2faa44582849409a392f80a839977,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f934e6203e4b24642b70c4d8180026e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2faa44582849409a392f80a839977, type: 3}
 --- !u!4 &857843528 stripped
@@ -2231,6 +2251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar
       objectReference: {fileID: 0}
+    - target: {fileID: 8660529908990290367, guid: d0b2faa44582849409a392f80a839977,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f934e6203e4b24642b70c4d8180026e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2faa44582849409a392f80a839977, type: 3}
 --- !u!4 &964947006 stripped
@@ -2402,7 +2427,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 829b6fa870887cb479f38a371a1a0dc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2930,7 +2955,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 829b6fa870887cb479f38a371a1a0dc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4057,7 +4082,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 829b6fa870887cb479f38a371a1a0dc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4343,6 +4368,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8660529908990290367, guid: d0b2faa44582849409a392f80a839977,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f934e6203e4b24642b70c4d8180026e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2faa44582849409a392f80a839977, type: 3}
 --- !u!1001 &1833479014
@@ -4493,7 +4523,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 829b6fa870887cb479f38a371a1a0dc6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4702,6 +4732,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8660529908990290367, guid: d0b2faa44582849409a392f80a839977,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f934e6203e4b24642b70c4d8180026e8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2faa44582849409a392f80a839977, type: 3}
 --- !u!1001 &1931803694
