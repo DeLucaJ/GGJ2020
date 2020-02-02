@@ -19,6 +19,7 @@ VAR stonckmafio = 0
 VAR mafiaquesthandler =0
 VAR economyrestarted = 0
 LIST inventory = feather, sweat, dress
+
 LIST machineparts = Atomic_Flange, Enriched_Plutonium_Gasket, Flapper_Seal, Temporal_Fill_Valve, Time_Tommy_Gun
 
 
@@ -78,6 +79,8 @@ LIST machineparts = Atomic_Flange, Enriched_Plutonium_Gasket, Flapper_Seal, Temp
 +[FabMafio]->FabMafio
 +[PainMafio]->PainMafio
 +[StonkMafio]->StonkMafio
++[TimeMachine]->TimeMachine
++[FullGameIntro]->FullGameIntro
 
 End Conversation #noconvo
 
@@ -105,8 +108,8 @@ Have unemployment benefits been invented yet?
 =Economy
 ~FinalQuest =2
 What?! The DON sent you? Oh, no... I always knew this day would come...
-I'm sorry to say that I don't know how to work the economy machine.. My predecessor, Doctor Deitz, knew about it, but he hasn't been seen in a long time. Everyone thinks he went batty.
-+[Well, I don't know about any economy machine - I'm just a simple time traveler. But I can go talk to Doctor Deitz.]->Nice
+I'm sorry to say that I don't know how to work the economy machine.. My predecessor, Doctor Dietz, knew about it, but he hasn't been seen in a long time. Everyone thinks he went batty.
++[Well, I don't know about any economy machine - I'm just a simple time traveler. But I can go talk to Doctor Dietz.]->Nice
 
 =Nice
 Wow, really? I'd really appreciate that. I'd say you're going to save my job, but I think I'm fired anyway. I guess the Don's less likely to run me over with a Model T, so that's nice. 
@@ -795,7 +798,8 @@ I'm not sure I can move, I think my joints might be locked. Still, I'll try to s
 
 ==TheRat
 ~ speaker = "THE RAT"
-Squeenk. So you know how everybody in the 20s forward says "rats" when something bad happens? Yeah, that's because of me. I'm that rat. Singular. Not multiple rats. I chew holes in their socks, I cause plagues, I'm a pretty bad dude. Basically a war criminal. I should be arrested, but as I am a rat I would not be fit to stand trial. Try it, punk. You'll be laughed out of court and I'll go free - and you better believe I'll be back to bite your toes. Don't look at me. Don't pass me in the street. I'm a bad dude.
+Squeenk. 
+So you know how everybody in the 20s forward says "rats" when something bad happens? Yeah, that's because of me. I'm that rat. Singular. Not multiple rats. I chew holes in their socks, I cause plagues, I'm a pretty bad dude. Basically a war criminal. I should be arrested, but as I am a rat I would not be fit to stand trial. Try it, punk. You'll be laughed out of court and I'll go free - and you better believe I'll be back to bite your toes. Don't look at me. Don't pass me in the street. I'm a bad dude.
 ->start
 
 ==DoorGuard1
@@ -950,6 +954,55 @@ Man, you would not believe how tough it was to get over here. I'm still in a tre
 You know, I thought it'd be easier here, but we still deal with a lot of pencils, and I keep obliterating them into a fine powder. If anything, these guys are MORE upset than the stonk brokers were. 
 ~speaker = "Stonck Mafio"
 ->start
+
+==TimeMachine
+~speaker = "endgame"
+If you think you have enough machine parts, you can try to return to the 21st century. If you don't have all 5 parts, however, there's no telling what might happen when you turn it on!
++[Activate Time Machine]->TimeHandler
++[Back]->NoHUD
+
+=TimeHandler
+{
+-LIST_COUNT(machineparts) ==0:
+->WorstEnd
+-LIST_COUNT(machineparts) <3 >0:
+->BadEnd
+-LIST_COUNT(machineparts) <2 >5:
+->OKEnd
+-LIST_COUNT(machineparts) == 5:
+->GoodEnd
+}
+=WorstEnd
+You attempt to turn the time machine on. With none of its parts replaced, it coughs once, makes a few deep, wracking noises, and then proceeds to EXPLODE.
+
+You're relatively unscathed, but you're also trapped in the '20s with an economic depression that you caused and probably one or two grumpy people. Have fun!
+->start
+
+=BadEnd
+You activate the time machine. As you've only placed a couple parts back where they were supposed to go it doesn't sound quite right... but it's probably fine.
+The machine shudders, the flow of time begins - and stops. Funny, that felt a little quick. As you step outside your machine you realize that you've traveled about a week into the future. Maybe it was enough time for everyone to forget that you caused the Great Depression? They probably forgot, right?
+Good luck!
+->start
+
+=OKEnd
+You've found most of your parts - the machine might not work well, but it should be enough to take you back to the present.
+As you step into the machine you feel time flow around you - but after a few minutes of travel you feel the machine stop in a juttering crash!
+As you step out of the machine you realize that you've returned almost to the present, but a few years too early - late 2007, says the readout in your machine. And what is this - but your machine has crashed into the entire supply of money to all of the banks in America!
+Oh, no! You caused the Great Recession!
+->start
+
+=GoodEnd
+With all its parts replaced, your time machine doesn't just hum - it sings. You step into the time machine and turn the dial, and in no more than a few minutes you've returned to the futuristic year of 2012. 
+Ahh, thank god for the future! No more economic peril, no concerns about war or political corruption - just the good ol' present!
+...
+Welp, that's enough of that. Time to go back in the time machine!
+->start
+
+==FullGameIntro
+~ speaker = "start"
+Oh dear! You seem to have crashed your time machine into the New York stock exchange! It happens to the best of us.
+The impact left you unconscious, and when you came to, you found that a number of your time machine parts were missing! Better go find them, unless you fancy trying your luck with the space-time continuum. It's proabably pretty flexible, right?
++[Start]->NoHUD
 
 
 
