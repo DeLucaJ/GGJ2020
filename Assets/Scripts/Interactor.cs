@@ -42,7 +42,8 @@ public class Interactor : MonoBehaviour
         storyManager.LoadChunk(actor.character.sceneName);
 
         int voice = Random.Range(1, actor.character.voices.Count);
-        actor.character.voices[voice].
+        actor.audioSource.clip = actor.character.voices[voice];
+        actor.audioSource.Play();
     }
 
     void SelectActor()
