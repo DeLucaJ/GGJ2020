@@ -18,8 +18,8 @@ MonoBehaviour:
     jsonAssetPath: {fileID: 0}
     jsonAsset: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
   - compileAutomatically: 0
-    inkAsset: {fileID: 102900000, guid: 9415f64dd07429747ba22828f6f56a45, type: 3}
+    inkAsset: {fileID: 102900000, guid: 93ebdc12205042a40a32242128a258cc, type: 3}
     jsonAssetPath: {fileID: 0}
-    jsonAsset: {fileID: 4900000, guid: ad0dbb6e421abdf49a585d6d4a1d8b67, type: 3}
+    jsonAsset: {fileID: 4900000, guid: f68d30c9083d15a469db464674e4317b, type: 3}
   pendingCompilationStack: []
   compilationStack: []
