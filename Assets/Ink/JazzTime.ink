@@ -17,6 +17,7 @@ VAR painmafio = 0
 VAR fabmafio = 0
 VAR stonckmafio = 0
 VAR mafiaquesthandler =0
+VAR economyrestarted = 0
 LIST inventory = feather, sweat, dress
 LIST machineparts = Atomic_Flange, Enriched_Plutonium_Gasket, Flapper_Seal, Temporal_Fill_Valve, Time_Tommy_Gun
 
@@ -95,6 +96,21 @@ End Conversation #noconvo
 
 =Thanks
 Have unemployment benefits been invented yet? 
+{
+-FinalQuest ==1:
++[Hey, the Don sent me. He says you know how to, uh, restart the economy?]->Economy
+}
++[End Conversation]->NoHUD
+
+=Economy
+~FinalQuest =2
+What?! The DON sent you? Oh, no... I always knew this day would come...
+I'm sorry to say that I don't know how to work the economy machine.. My predecessor, Doctor Deitz, knew about it, but he hasn't been seen in a long time. Everyone thinks he went batty.
++[Well, I don't know about any economy machine - I'm just a simple time traveler. But I can go talk to Doctor Deitz.]->Nice
+
+=Nice
+Wow, really? I'd really appreciate that. I'd say you're going to save my job, but I think I'm fired anyway. I guess the Don's less likely to run me over with a Model T, so that's nice. 
+Tell the Doctor I said hi if you see him.
 ->start
 
 =JobComplete
@@ -119,7 +135,7 @@ Oh, hi, I didn't see you there, seeing how you're... small. I'm sorry if I don't
 +[Are you a Modernist? Because you're boring the crap out of me.]->ScrewYou
 
 =Exposit1
-Somebody crashed the stonck exchange and caused the Great Depression. Well, no use crying over spilled milk and all that, but have you seen this place? It's a mess. Worse, all of the other brokers seem to be quitting. I need to get this place cleaned up before my daughter gets here and thinks I'm a failure! Also, no one leaves until it's clean.
+Somebody crashed the stonk exchange and caused the Great Depression. Well, no use crying over spilled milk and all that, but have you seen this place? It's a mess. Worse, all of the other brokers seem to be quitting. I need to get this place cleaned up before my daughter gets here and thinks I'm a failure! Also, no one leaves until it's clean.
 +[All right, I'll see what I can do.]->DialogComplete
 +[You should just accept that you're a failure. Failure.]->ScrewYou
 
@@ -173,6 +189,16 @@ fish time fish time fish time fish time FISH TIME!
 ==StonkGangster==
 ~ speaker = "Powerful Stonck Broker"
 Ahhh hooey, just snapped another pen in half by holding it too hard. You ever feel like you're just not the right fit for your job?
+{
+-mafiaquest ==1 && stonckmafio !=1:
++[Ever think about a change of career path?]->Mafia
+}
++[End Conversation]->NoHUD
+
+=Mafia
+~stonckmafio = 1
+Every so often. You want me to join the mafios? Well, I suppose it's probably better than going fishing. I can't swim.
+Guess I'll go visit the Capo.
 ->start
 
 ==StonkMarks==
@@ -244,7 +270,7 @@ All right, look. I saw you talking to Barry. I know you're onto me. It's time th
 +[What are you talking about?]->exposit
 
 =Joke
-Oh, I see - you mean the chaos I've caused with my lackadaisical attitude has resulted in the stonck floor becoming a metaphorical mess. You're right to judge me - but please, let me explain.
+Oh, I see - you mean the chaos I've caused with my lackadaisical attitude has resulted in the stonk floor becoming a metaphorical mess. You're right to judge me - but please, let me explain.
 +[Actually, I just want you to h-]->exposit
 
 =No
@@ -253,7 +279,7 @@ All right, sure - but on one condition. Tell the boss man I'm quitting. I don't 
 +[I hate fishermen. Quit on your own.]->ScrewYou
 
 =exposit
-I caused all this. Not the stonck market crash, that was some jerkass in a time machine. But this mass walkout of brokers - all of these people who want to fish? Yeah, it was my idea. Fishing's always been my one true passion, so when the market crashed I thought it was my opportunity. But now I see that my actions have consequences - this place is a disaster area.
+I caused all this. Not the stonk market crash, that was some jerkass in a time machine. But this mass walkout of brokers - all of these people who want to fish? Yeah, it was my idea. Fishing's always been my one true passion, so when the market crashed I thought it was my opportunity. But now I see that my actions have consequences - this place is a disaster area.
 +[Uh, yeah, I guess. How about you help clean up, then?]->No
 
 =DialogComplete
@@ -336,7 +362,7 @@ Wowee, that's harsh!
 }
 
 =QuestDoneTalk
-Hello again, honey. Looking resplendant, as always. Hmmm hm hmmm....
+Hello again, honey. Looking resplendent, as always. Hmmm hm hmmm....
 ->start
 
 =ReturnTalk2
@@ -349,7 +375,7 @@ I'll be waiting...
 ~FlapComplete = 1
 ~machineparts += Flapper_Seal
 Ahh, you're finally back. It's been quite the time in your absence - apparently news broke that I cared too much about getting my scotch, so I lost my throne.
-Funnily enough, it was Brandy who was elected Queen immediately therafter - and she lost the throne just as quickly because of how uptight she was about her drinks. Quite funny. Should require a lot of paperwork. Wonderful, isn't it?
+Funnily enough, it was Brandy who was elected Queen immediately thereafter - and she lost the throne just as quickly because of how uptight she was about her drinks. Quite funny. Should require a lot of paperwork. Wonderful, isn't it?
 +[Uh... totally.]->QueenComplete
 
 =QueenComplete
@@ -386,14 +412,14 @@ A machine? I hope you're not taking me for a mechanic! Hahaha....
 +[No, seriously, I need machine parts. Do you have any?]->Trailoff
 
 =FLIRT
-Oh, my oh my, are you flirting witih me? Well, you certainly do look sumptuous. Wouldn't mind taking a nibble out of you. Arf! Hehe. Hm hm m hmmm...
+Oh, my oh my, are you flirting with me? Well, you certainly do look sumptuous. Wouldn't mind taking a nibble out of you. Arf! Hehe. Hm hm m hmmm...
 +[uh]->embarrass
 +[huh]->embarrass
 +[hummuna]->embarrass
 
 =embarrass
 Oh, aren't you precious! Don't worry, honey, I was joking... well, mostly. What can I do for you?
-+[I'm sort of a time traveler. My machine broke down on the stonck floor and-]->Continue
++[I'm sort of a time traveler. My machine broke down on the stonk floor and-]->Continue
 
 =Continue
 Oh, say no more, honey. This crystal on my crown rolled into The Party a few hours ago - I think it belongs to you. I'd love to give it back - but I wonder if you might be able to help me out with a little something first?
@@ -462,6 +488,15 @@ Hey, keep your voice down. Didn't you know that Argenta got exiled to the Waterf
 ==FlapGangster
 ~ speaker = "Fabulous Flapper"
 I'm a little new to The Party. I like it, but it's kinda weird. Most of the girls cry when they think no one's looking, and I think some lady was sent out earlier - I haven't seen her since. But I do feel pretty fashionable... 
+{
+-mafiaquest ==1 && fabmafio !=1:
++[Ever think about a change of scene?]->Mafia
+}
++[End Conversation]->NoHUD
+
+=Mafia
+~fabmafio = 1
+Oh, I suppose every girl wants to go out and see what's out there after a little while. I'm at that flighty age, you know. Very well - I'll go visit the Capo. I've heard he's quite handsome!
 ->start
 
 ==FlapGuard
@@ -497,7 +532,7 @@ Perhaps there's a lesson to be learned here: don't talk to time travelers. Leave
 
 =BrandyMad
 Hang on a moment. Is that... do you have alcohol on you? Is that scotch? Bourbon? (She sniffs deeply)
-Give it to me. You're not allowed to have that! Don't you know that it's prohibition times?! Eighteenth Amendmant, jackass!!!
+Give it to me. You're not allowed to have that! Don't you know that it's prohibition times?! Eighteenth Amendment, jackass!!!
 +[Why don't you call the police, lady? Oh wait, they all quit!]->Police
 +[Sorry, I've gotta bring this back to Queen Quinn. If she has any extra, you can have that.]->Queen
 +[I don't know what you're talking about.]->Police
@@ -554,13 +589,48 @@ If the 21st century is churning out people as DOWDY you, I don't think I'd WANT 
 ==SquatterKing
 ~ speaker = "Doctor Dietz"
 {
--deitzquest == "":
+-deitzquest == "" && WaterComplete !=1:
 ->IntroDialog
+-deitzquest == "" && WaterComplete ==1:
+->DeitzDone
 -deitzquest == "feather":
 ->featherfeedback
 -deitzquest == "sweat":
 ->sweatfeedback
 }
+
+=DeitzDone
+The flavor is like no other, the texture - oh, uh, I mean, my research is coming along splendidly. Something you need?
+
+{
+-FinalQuest ==2:
++[Hey, I talked to Big Barry and he said you can help us restart the economy. He says hi, by the way.]->Economy
+}
++[End Conversation]->NoHUD
+
+=Economy
+~FinalQuest = 3
+Oh, the Don's finally come knocking, eh? I'm surprised it's taken him this long. Maybe he was hoping Communism would take over.
+...don't tell him I said that, I don't want to get whacked. 
++[I won't if you help me fix the economy.]->Economy2
+
+=Economy2
+The economy isn't broken, you just need to turn it off and turn it on again. 
+
++[Are you kidding me?]->Nojoke
++[No, seriously, is this a joke?]->Nojoke
+
+=Nojoke
+I'm quite serious. There's a button on the back. Just press it twice and you should be good to go.
+
+If you don't believe me, go give it a try.
+
++[All right, I guess.]->NoHUD
++[If this is so easy, why hasn't someone already done it?]->Shrug
+
+=Shrug
+Think about it, time traveler. Have you seen anyone walking around? How are we going to press any buttons if we can't move?
++[I really don't want to think about this any harder than I have to. Bye.]->NoHUD
 
 =featherfeedback
 Yes? Have you acquired my feather yet?
@@ -572,7 +642,7 @@ Yes? Have you acquired my feather yet?
 Good, good. Let me check my ingredient list...
 {inventory !=sweat:
 ~deitzquest = "sweat"
-We still need the stonck broker sweat. Find the sweat of a man who is particularly twitchy.
+We still need the stonk broker sweat. Find the sweat of a man who is particularly twitchy.
 -else:
 ->GotItAll
 }
@@ -618,29 +688,29 @@ I am Doctor Dietz. I seek to cure poverty. Will you help?
 +[Help you... cure poverty.]->MockMe
 
 =MockMe
-Yes, ha ha ha, jokes all around. Hilarious. But the problem is that I have a part for a certain machine that recently crashed upon the stonck floor, and I know that said machine shall not work correctly without this part.
+Yes, ha ha ha, jokes all around. Hilarious. But the problem is that I have a part for a certain machine that recently crashed upon the stonk floor, and I know that said machine shall not work correctly without this part.
 So. I think it would do you well to assist me.
 +[All right, all right, no need to get testy. What is it you want?]->Explanation
 +[If you think a crackpot in a sewer pipe is going to bully me, you need your head examined.]->ShotDown
 
 =Explanation
 As I mentioned, I am making a pill to cure poverty, yes? But my resources are... limited, as you may perhaps have observed. I need two things:
--The body of a stonck broker, to boil
+-The body of a stonk broker, to boil
 -A Flapper Feather
 These are the last two ingredients I need.
 +[Hang on - you need to boil a person?]->BoilThem
 +[Why exactly do you need a feather?]->Feathers
 
 =BoilThem
-Well, I need a stonck broker's essence - it fortifies the pill, you understand.
-What's with that look? Oh, fine, fine, you bleeding heart. Just get some sweat from one if you're really too cowardly to boil one alive. Try to find one who was particularly guilty, he'll have more concentrated sweat.
+Well, I need a stonk broker's essence - it fortifies the pill, you understand.
+What's with that look? Oh, fine, fine, you bleeding heart. Just get some sweat from one if you're really too cowardly to boil one alive. Try to find one who is particularly jumpy, he'll have more concentrated sweat.
 +[All right, I'll do that.]->SweatConfirm
 +[What about the feather?]->Feathers
 
 =Feathers
 A bit of an... odd situation, that. The Flappers sometimes keep some rather... interesting types of feathers, and I've heard that they can have unique medical - or economic - properties. It dips a little into alchemy, but I assure you that there's more science to this than it sounds.
 +[Ooookay, if you say so. I'll find you a feather.]->FeatherConfirm
-+[What about the stonck broker?]->BoilThem
++[What about the stonk broker?]->BoilThem
 
 =SweatConfirm
 ~deitzquest = "sweat"
@@ -698,7 +768,7 @@ Ah had ta sell ma left kidneh for 'nuff money t' get through th' week.
 
 ==Squat7
 ~ speaker = "Squatter"
-Though a time traveler may have manually crashed the stonck market and thrust us into this grim predicament, I believe one could see the inevitable writing on the wall brought on by the years of excess following the Great War. 
+Though a time traveler may have manually crashed the stonk market and thrust us into this grim predicament, I believe one could see the inevitable writing on the wall brought on by the years of excess following the Great War. 
 Really, we are ALL to blame - though if I found that time traveler I would soundly throttle them before tearing them to pieces. 
 ->start
 
@@ -712,6 +782,15 @@ I eat both my boots.
 ==Squat9
 ~ speaker = "Squatter in Exceptional Pain"
 I am in exceptional pain.
+{
+-mafiaquest ==1 && painmafio !=1:
++[Ever think about a change of... pose?]->Mafia
+}
++[End Conversation]->NoHUD
+
+=Mafia
+~painmafio = 1
+I'm not sure I can move, I think my joints might be locked. Still, I'll try to see the Capo - maybe if I head deeper into the building my limbs'll... just start working? Look, I don't know, it's worth a try.
 ->start
 
 ==TheRat
@@ -721,7 +800,7 @@ Squeenk. So you know how everybody in the 20s forward says "rats" when something
 
 ==DoorGuard1
 ~ speaker = "Door Guard"
-Funny how yous talkin' to me when yous should be smashed into a teensy little disc. Yous think that's funny? Yous sould go into comedy so I can smash yous flat onstage... 
+Funny how yous talkin' to me when yous should be smashed into a teensy little disc. Yous think that's funny? Yous should go into comedy so I can smash yous flat onstage... 
 ->start
 
 ==DoorGuard2
@@ -741,7 +820,7 @@ Look, if you keep staring at me I'm gonna punch yer lights out. Now you gotta fi
 ->QuestNotDone
 }
 =Intro
-You? I know you. You were one'a them unconscoius stonck brokers out on that there trading floor. I knowed yer smell. Yeah, I took one'a yer tech-y machine-y parts and yer gonna help me if you want it back, yeah?
+You? I know you. You were one'a them unconscious stonk brokers out on that there trading floor. I knowed yer smell. Yeah, I took one'a yer tech-y machine-y parts and yer gonna help me if you want it back, yeah?
 +[It's better than getting kneecapped, what do you need?]->Help
 +[(Mocking cowboy noises)]->Angry
 
@@ -750,15 +829,18 @@ You? I know you. You were one'a them unconscoius stonck brokers out on that ther
 -mafiaquesthandler ==1:
 ->QuestDoneHandler
 }
-wow great job
-+[Thanks man]->QuestRealDone
+Ya found me three new mafios? Well blame! They said it couldn't happen!
++[Always happy to help my neighborhood organized crime racket.]->QuestRealDone
++[I'm pretty great.]->QuestRealDone
 
 =QuestRealDone
 ~mafiaquesthandler = 1
+~inventory += Enriched_Plutonium_Gasket
+Here's that mechanical part I talked about - make good use'a it. Also, the Don wants t' see ya - don't leave him waitin'!
 ->start
 
 =QuestDoneHandler
-Why are you back? Quest's done.
+Thanks again for all yer help, pardner. I mean, uh, wise guy.
 ->start
 
 =QuestNotDone
@@ -778,12 +860,9 @@ Run along now, little doggie, and find me some new hands. Git!
 ->start
 
 
-
-
-
 ==Mafio1
 ~ speaker = "Mafio"
-Profit margins are down. Makes sense, seeing how it's, y'know, the Great Depression, but all the same I'd rather be making money, y'know? I'd shoot my stonck broker but the little guy's wearing a fishing hat and I just don't have the heart for it. Maybe later.
+Profit margins are down. Makes sense, seeing how it's, y'know, the Great Depression, but all the same I'd rather be making money, y'know? I'd shoot my stonk broker but the little guy's wearing a fishing hat and I just don't have the heart for it. Maybe later.
 ->start
 
 ==Mafio2
@@ -808,6 +887,33 @@ Don't make me play my "violin" at you, baby! If you get what I'm sayin'!...I'm s
 
 ==ThatBoy
 ~ speaker = "The Don"
+{
+-economyrestarted ==0:
+->Intro
+-economyrestarted ==0 && FinalQuest <3 && FinalQuest >0:
+->Middlemafio
+-economyrestarted ==1 && FinalQuest !=4:
+->Pleasedmafio
+-economyrestarted ==1 && FinalQuest ==4:
+->Finalmafio
+}
+
+=Middlemafio
+(The Don gestures at you and grumbles in his pseudo-Italian speak. You probably should come back when you've made more headway in restarting the economy)
+->start
+
+=Finalmafio
+(The Don is still muttering to himself. Only the word "ratto" is distinguishable in the flurry of mumbled syllables)
+->start
+
+=Pleasedmafio
+~inventory += Time_Tommy_Gun
+~FinalQuest = 4
+(The Don's Italian noises have a decidedly pleased sound to them. He pushes a time machine part into your hands and blows you a kiss. He then immediately returns his attention to his desk, mumbling about "rats" and something called "RICO")
+(Seems like an understated reaction for repairing the entire economy, but maybe it's better to take what you can get here)
+->start
+
+=Intro
 (By your estimate this is the leader of the mafios, but it's almost impossible to tell. His Italian accent is so thick that you suspect even a native speaker would have absolutely no idea what he's saying)
 +[Ha ha, yes, totally, uh, sir. What is it you need?]->ThatBoy2
 +[Oh, me too, me too! My daughter also just got married!]->MadBoy
@@ -841,7 +947,7 @@ Man, you would not believe how tough it was to get over here. I'm still in a tre
 ->start
 
 ==StonkMafio
-You know, I thought it'd be easier here, but we still deal with a lot of pencils, and I keep oblitering them into a fine powder. If anything, these guys are MORE upset than the stonck brokers were. 
+You know, I thought it'd be easier here, but we still deal with a lot of pencils, and I keep obliterating them into a fine powder. If anything, these guys are MORE upset than the stonk brokers were. 
 ~speaker = "Stonck Mafio"
 ->start
 
