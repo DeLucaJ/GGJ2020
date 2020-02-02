@@ -61,3 +61,16 @@ crashlytics-build.properties
 # Testing Scene Files
 [Aa]ssets/Scenes/_*
 [Aa]ssets/Ink/_*
+ProjectSettings/ProjectVersionPrevious.txt
+Assets/Plugins/Ink/InkLibs/InkCompiler/ink_compiler.csproj.meta
+Assets/InkLibrary.asset
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/CurrentDownloads
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/529597138-756894925
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/327570448-756894925
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/1485434927-756894925
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/-317351411-756894925
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/-1774612739-756894925
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/-1764981632-756894925
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/-125850854-756894925
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/-1184582882-756894925
+Assets/Allegorithmic/Plugins/Substance/Substance Source/Editor/.SourceCache/-1005284079-756894925
