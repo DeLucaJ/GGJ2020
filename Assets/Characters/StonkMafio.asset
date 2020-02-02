@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f924575954b779441813bb52985ecfc9, type: 3}
   m_Name: StonkMafio
   m_EditorClassIdentifier: 
-  characterName: Fabulous Mafio
-  sceneName: FabMafio
+  characterName: Stonk Mafio
+  sceneName: StonkMafio
   voices: []
