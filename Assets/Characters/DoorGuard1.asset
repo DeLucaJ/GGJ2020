@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Door Guard
   sceneName: DoorGuard1
-  voices: []
+  voices:
+  - {fileID: 8300000, guid: 6370519c0f8c1fc4ab1b59c47a532fe3, type: 3}
+  - {fileID: 8300000, guid: 1bf12de8c4d080e4e9b652c3b867f9f0, type: 3}
+  - {fileID: 8300000, guid: ad24000d4e781e4459f09054bde94a96, type: 3}
+  - {fileID: 8300000, guid: c4bcb1f42cf96aa42ac53c9ed1cb75b4, type: 3}

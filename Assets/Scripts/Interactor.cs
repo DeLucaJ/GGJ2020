@@ -11,6 +11,8 @@ public class Interactor : MonoBehaviour
     public StoryManager storyManager;
     public FirstPersonAIO controller;
 
+    private bool canInteract = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class Interactor : MonoBehaviour
         controller.enableCameraMovement = !value;
         controller.playerCanMove = !value;
         controller.FreeCursor(value);
+        canInteract = !value;
     }
 
     void Teleport(Vector3 position, bool cantp)
@@ -50,7 +53,7 @@ public class Interactor : MonoBehaviour
     {
         Ray selector = camera.ViewportPointToRay(Vector3.one / 2f);
         RaycastHit hit;
-        if (Physics.Raycast(selector, out hit, raydistance, layerMask))
+        if (canInteract && Physics.Raycast(selector, out hit, raydistance, layerMask))
         {
             Actor actor = hit.collider.GetComponent<Actor>();
             Teleporter tp = hit.collider.GetComponent<Teleporter>();

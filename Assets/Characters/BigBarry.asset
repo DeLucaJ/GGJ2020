@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Big Barry
   sceneName: BigBarry
-  sprite: {fileID: 21300000, guid: b9fd97f3443261840bdab55db087e6a4, type: 3}
+  voices:
+  - {fileID: 8300000, guid: 1192fe813dfee66449892bcb34138640, type: 3}
+  - {fileID: 8300000, guid: c431ff3a46dc4714f803958b3690f965, type: 3}
+  - {fileID: 8300000, guid: b89aa556295190045b7537549414d25a, type: 3}
+  - {fileID: 8300000, guid: f9985b05bacccc54697c9e27160afbb9, type: 3}
+  - {fileID: 8300000, guid: 2f9e3a42850c2a54ca0725da0762ef06, type: 3}
+  - {fileID: 8300000, guid: 33f686300a5ed91479908c8910484ac6, type: 3}

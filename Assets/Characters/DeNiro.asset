@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: The Don
   sceneName: ThatBoy
-  voices: []
+  voices:
+  - {fileID: 8300000, guid: 5e8cf5d032c0287459a4b7472b5143c1, type: 3}
+  - {fileID: 8300000, guid: 91deebf8a676404409e9a54057c09ca6, type: 3}
+  - {fileID: 8300000, guid: 568f4a63adb5f5445b5dd2a44cdd1793, type: 3}
+  - {fileID: 8300000, guid: 10c0b914be68a1d48ad3802e5f55d0d9, type: 3}

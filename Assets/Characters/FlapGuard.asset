@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Flapper Guard
   sceneName: FlapGuard
-  voices: []
+  voices:
+  - {fileID: 8300000, guid: 4eafedd7b5457644fa8ec458ca683643, type: 3}
+  - {fileID: 8300000, guid: b5be32b6cfc21664aa9d9733af478fcc, type: 3}
+  - {fileID: 8300000, guid: 43d4e8538a3675648afa91c1560d161d, type: 3}
+  - {fileID: 8300000, guid: 88c8a241235922042b59bcd7398f072c, type: 3}
