@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         inventory = storyManager.story.variablesState["inventory"] as InkList;
-        Debug.Log(inventory.Count);
+        // Debug.Log(inventory.Count);
     }
 
     // Update is called once per frame

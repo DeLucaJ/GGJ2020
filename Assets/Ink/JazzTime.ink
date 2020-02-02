@@ -983,27 +983,31 @@ If you think you have enough machine parts, you can try to return to the 21st ce
 You attempt to turn the time machine on. With none of its parts replaced, it coughs once, makes a few deep, wracking noises, and then proceeds to EXPLODE.
 
 You're relatively unscathed, but you're also trapped in the '20s with an economic depression that you caused and probably one or two grumpy people. Have fun!
-->start
+-> END
+//->start
 
 =BadEnd
 You activate the time machine. As you've only placed a couple parts back where they were supposed to go it doesn't sound quite right... but it's probably fine.
 The machine shudders, the flow of time begins - and stops. Funny, that felt a little quick. As you step outside your machine you realize that you've traveled about a week into the future. Maybe it was enough time for everyone to forget that you caused the Great Depression? They probably forgot, right?
 Good luck!
-->start
+-> END
+//->start
 
 =OKEnd
 You've found most of your parts - the machine might not work well, but it should be enough to take you back to the present.
 As you step into the machine you feel time flow around you - but after a few minutes of travel you feel the machine stop in a juttering crash!
 As you step out of the machine you realize that you've returned almost to the present, but a few years too early - late 2007, says the readout in your machine. And what is this - but your machine has crashed into the entire supply of money to all of the banks in America!
 Oh, no! You caused the Great Recession!
-->start
+-> END
+// ->start
 
 =GoodEnd
 With all its parts replaced, your time machine doesn't just hum - it sings. You step into the time machine and turn the dial, and in no more than a few minutes you've returned to the futuristic year of 2012. 
 Ahh, thank god for the future! No more economic peril, no concerns about war or political corruption - just the good ol' present!
 ...
 Welp, that's enough of that. Time to go back in the time machine!
-->start
+-> END
+// ->start
 
 ==FullGameIntro
 ~ speaker = "start"

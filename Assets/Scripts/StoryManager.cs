@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 using Ink.Runtime;
 
@@ -124,7 +125,7 @@ public class StoryManager : MonoBehaviour
         else
         {
             Button restart = CreateChoiceView("The End.\n Replay?");
-            restart.onClick.AddListener(delegate { StartStory(); });
+            restart.onClick.AddListener(delegate { SceneManager.LoadScene(SceneManager.GetActiveScene().name); });
         }
         LoadSpeaker();
     }
