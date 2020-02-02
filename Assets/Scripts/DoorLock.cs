@@ -7,6 +7,12 @@ public class DoorLock : MonoBehaviour
     public bool isLocked = false;
     public StoryManager sm;
     public string lockVariable;
+    public Teleporter tp;
+
+    private void Start()
+    {
+        if (isLocked) tp.canTeleport = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,6 +24,7 @@ public class DoorLock : MonoBehaviour
         if(((int) sm.story.variablesState[lockVariable]) > 0)
         {
             isLocked = false;
+            tp.canTeleport = true;
         }
     }
 }
