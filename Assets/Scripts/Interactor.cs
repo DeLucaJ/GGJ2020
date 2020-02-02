@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
+    public float raydistance;
     public KeyCode interact_key;
     public Camera camera;
     public LayerMask layerMask;
@@ -33,7 +34,7 @@ public class Interactor : MonoBehaviour
     {
         Ray selector = camera.ViewportPointToRay(Vector3.one / 2f);
         RaycastHit hit;
-        if (Physics.Raycast(selector, out hit, 2f, layerMask))
+        if (Physics.Raycast(selector, out hit, raydistance, layerMask))
         {
             Actor actor = hit.collider.GetComponent<Actor>();
             if (actor != null && Input.GetKeyDown(interact_key))
