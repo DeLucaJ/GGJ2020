@@ -290,7 +290,7 @@ public class BETA_SETTINGS{
         }
         mouseSensitivityInternal = mouseSensitivity;
         cameraStartingPosition = playerCamera.transform.localPosition;
-        if(lockAndHideCursor) { Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false; }
+        if (lockAndHideCursor) { Cursor.lockState = CursorLockMode.Locked; Cursor.visible = false; }
         baseCamFOV = playerCamera.fieldOfView;
         #endregion
 
@@ -681,28 +681,41 @@ public class BETA_SETTINGS{
 
     }
 
-/*     public IEnumerator FOVKickOut()
+    public void FreeCursor(bool isfree)
     {
-        float t = Mathf.Abs((playerCamera.fieldOfView - fOVKick.fovStart) / fOVKick.FOVKickAmount);
-        while(t < fOVKick.changeTime)
+        if (isfree)
         {
-            playerCamera.fieldOfView = fOVKick.fovStart + (fOVKick.KickCurve.Evaluate(t / fOVKick.changeTime) * fOVKick.FOVKickAmount);
-            t += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            Cursor.lockState = CursorLockMode.None;
         }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        Cursor.visible = isfree;
     }
 
-    public IEnumerator FOVKickIn()
-    {
-        float t = Mathf.Abs((playerCamera.fieldOfView - fOVKick.fovStart) / fOVKick.FOVKickAmount);
-        while(t > 0)
+    /*     public IEnumerator FOVKickOut()
         {
-            playerCamera.fieldOfView = fOVKick.fovStart + (fOVKick.KickCurve.Evaluate(t / fOVKick.changeTime) * fOVKick.FOVKickAmount);
-            t -= Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            float t = Mathf.Abs((playerCamera.fieldOfView - fOVKick.fovStart) / fOVKick.FOVKickAmount);
+            while(t < fOVKick.changeTime)
+            {
+                playerCamera.fieldOfView = fOVKick.fovStart + (fOVKick.KickCurve.Evaluate(t / fOVKick.changeTime) * fOVKick.FOVKickAmount);
+                t += Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
         }
-        playerCamera.fieldOfView = fOVKick.fovStart;
-    } */
+
+        public IEnumerator FOVKickIn()
+        {
+            float t = Mathf.Abs((playerCamera.fieldOfView - fOVKick.fovStart) / fOVKick.FOVKickAmount);
+            while(t > 0)
+            {
+                playerCamera.fieldOfView = fOVKick.fovStart + (fOVKick.KickCurve.Evaluate(t / fOVKick.changeTime) * fOVKick.FOVKickAmount);
+                t -= Time.deltaTime;
+                yield return new WaitForEndOfFrame();
+            }
+            playerCamera.fieldOfView = fOVKick.fovStart;
+        } */
 
     public IEnumerator CameraShake(float Duration, float Magnitude){
         float elapsed =0;

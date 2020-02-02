@@ -8,7 +8,7 @@ public class Interactor : MonoBehaviour
     public Camera camera;
     public LayerMask layerMask;
     public StoryManager storyManager;
-
+    public FirstPersonAIO controller;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +32,10 @@ public class Interactor : MonoBehaviour
             if (actor != null && Input.GetKeyDown(interact_key))
             {
                 Debug.Log(actor.character.name);
+                controller.enableCameraMovement = false;
+                controller.playerCanMove = false;
+                controller.FreeCursor(true);
+                storyManager.ShowUI(true);
                 storyManager.LoadChunk(actor.character.sceneName);
             }
         }

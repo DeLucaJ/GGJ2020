@@ -24,6 +24,7 @@ public class StoryManager : MonoBehaviour
     {
         RemoveChoices();
         StartStory();
+        ShowUI(false);
     }
 
     public void ShowUI(bool value)
@@ -33,6 +34,7 @@ public class StoryManager : MonoBehaviour
         {
             gameObject.transform.GetChild(i).gameObject.SetActive(value);
         }
+
     }
 
     public void LoadChunk(string knot)
