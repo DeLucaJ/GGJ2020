@@ -13,6 +13,8 @@ public class StoryManager : MonoBehaviour
 
     // UI Prefabs
     [SerializeField]
+    private InventoryManager im;
+    [SerializeField]
     private Text textbox;
     [SerializeField]
     private Text speakerbox;
