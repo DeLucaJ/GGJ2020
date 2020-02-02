@@ -88,6 +88,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle
       objectReference: {fileID: 0}
+    - target: {fileID: 7642085242748554877, guid: e36f41bd7b7d43441808f5f2bbd93bbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7642085242748554878, guid: e36f41bd7b7d43441808f5f2bbd93bbb,
         type: 3}
       propertyPath: m_Size.y

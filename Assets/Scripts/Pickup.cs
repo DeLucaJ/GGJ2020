@@ -21,7 +21,8 @@ public class Pickup : MonoBehaviour
         {
             storyManager.story.variablesState[storyVar] = (int)storyManager.story.variablesState[storyVar] + 1;
         }
-        GameObject.Destroy(gameObject);
+        Debug.Log("Pickedup " + storyVar);
+        Destroy(gameObject);
     }
 
     private void Update()
