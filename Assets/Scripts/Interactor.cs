@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+    
 public class Interactor : MonoBehaviour
 {
     public float raydistance;
@@ -40,6 +40,9 @@ public class Interactor : MonoBehaviour
         //Debug.Log(actor.character.name);
         storyManager.ShowUI(true);
         storyManager.LoadChunk(actor.character.sceneName);
+
+        int voice = Random.Range(1, actor.character.voices.Count);
+        actor.character.voices[voice].
     }
 
     void SelectActor()

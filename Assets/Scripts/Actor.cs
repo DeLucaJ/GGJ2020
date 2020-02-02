@@ -5,9 +5,8 @@ using UnityEngine;
 public class Actor : MonoBehaviour
 {
     public Character character;
+    public AudioSource audioSource;
 
-    [SerializeField]
-    private SpriteRenderer sr;
     private Transform playerTransform;
 
     // Start is called before the first frame update
