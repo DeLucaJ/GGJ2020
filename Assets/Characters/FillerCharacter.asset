@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f924575954b779441813bb52985ecfc9, type: 3}
   m_Name: FillerCharacter
   m_EditorClassIdentifier: 
-  characterName: 
-  sceneName: 
+  characterName: FillerName
+  sceneName: FillerScene
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

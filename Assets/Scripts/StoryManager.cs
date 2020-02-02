@@ -12,12 +12,12 @@ public class StoryManager : MonoBehaviour
     public event Action<Story> OnCreateStory;
 
     // UI Prefabs
-	[SerializeField]
-	private Text textbox;
+    [SerializeField]
+    private Text textbox;
     [SerializeField]
     private Text speakerbox;
-	[SerializeField]
-	private Button buttonPrefab;
+    [SerializeField]
+    private Button buttonPrefab;
 
     // Start is called before the first frame update
     void Awake()
@@ -37,6 +37,7 @@ public class StoryManager : MonoBehaviour
 
     public string LoadChunk(string knot)
     {
+        Debug.Log(knot);
         story.ChoosePathString(knot);
         return NextChunk();
     }
@@ -69,17 +70,20 @@ public class StoryManager : MonoBehaviour
         {
             text = story.ContinueMaximally();
         }
+        LoadSpeaker();
         Debug.Log(text);
+        Debug.Log(speakerbox.text);
         return text;
     }
 
-    void LoadSpeaker()
+    public void LoadSpeaker()
     {
-        speakerbox.text = (string) story.variablesState["speaker"];
+        speakerbox.text = (string)story.variablesState["speaker"];
         if (speakerbox.text == "null")
         {
             ShowUI(false);
         }
+        //speakerbox.text = speaker;
     }
 
     void ClearSpeaker()
@@ -96,14 +100,14 @@ public class StoryManager : MonoBehaviour
         string text = NextChunk();
         FillContentView(text);
         LoadSpeaker();
-        if(story.currentChoices.Count > 0)
+        if (story.currentChoices.Count > 0)
         {
-            for(int i =0; i < story.currentChoices.Count; i++)
+            for (int i = 0; i < story.currentChoices.Count; i++)
             {
                 Choice choice = story.currentChoices[i];
                 Button button = CreateChoiceView(choice.text.Trim());
                 button.onClick.AddListener(delegate
-                    { SelectChoice(choice); }
+                { SelectChoice(choice); }
                 );
             }
         }
