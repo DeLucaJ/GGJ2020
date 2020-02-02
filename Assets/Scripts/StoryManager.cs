@@ -11,9 +11,14 @@ public class StoryManager : MonoBehaviour
     public Story story;
     public event Action<Story> OnCreateStory;
 
+    [NonSerialized]
+    public bool showingUI = false;
+
     // UI Prefabs
     [SerializeField]
     private InventoryManager im;
+    [SerializeField]
+    private Interactor player;
     [SerializeField]
     private Text textbox;
     [SerializeField]
@@ -36,12 +41,13 @@ public class StoryManager : MonoBehaviour
         {
             gameObject.transform.GetChild(i).gameObject.SetActive(value);
         }
-
+        showingUI = value;
+        player.FreezeMovement(value);
     }
 
     public void LoadChunk(string knot)
     {
-        Debug.Log(knot);
+        // Debug.Log(knot);
         story.ChoosePathString(knot);
         RefreshViews();
     }
@@ -75,16 +81,18 @@ public class StoryManager : MonoBehaviour
             text = story.ContinueMaximally();
         }
         LoadSpeaker();
-        Debug.Log(text);
-        Debug.Log(speakerbox.text);
+        // Debug.Log(text);
+        // Debug.Log(speakerbox.text);
         return text;
     }
 
     public void LoadSpeaker()
     {
         speakerbox.text = (string)story.variablesState["speaker"];
+        Debug.Log(speakerbox.text);
         if (speakerbox.text == "null")
         {
+            Debug.Log(speakerbox.text == "null");
             ShowUI(false);
         }
         //speakerbox.text = speaker;
@@ -103,7 +111,6 @@ public class StoryManager : MonoBehaviour
         ShowUI(true);
         string text = NextChunk();
         FillContentView(text);
-        LoadSpeaker();
         if (story.currentChoices.Count > 0)
         {
             for (int i = 0; i < story.currentChoices.Count; i++)
@@ -120,6 +127,7 @@ public class StoryManager : MonoBehaviour
             Button restart = CreateChoiceView("The End.\n Replay?");
             restart.onClick.AddListener(delegate { StartStory(); });
         }
+        LoadSpeaker();
     }
 
     // Destroys all of the Systems's Children (Might need to check tags)
@@ -138,6 +146,7 @@ public class StoryManager : MonoBehaviour
     void SelectChoice(Choice choice)
     {
         story.ChooseChoiceIndex(choice.index);
+
         RefreshViews();
     }
 }

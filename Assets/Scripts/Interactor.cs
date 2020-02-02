@@ -13,13 +13,20 @@ public class Interactor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+    
     }
 
     // Update is called once per frame
     void Update()
     {
         SelectActor();
+    }
+
+    public void FreezeMovement(bool value)
+    {
+        controller.enableCameraMovement = !value;
+        controller.playerCanMove = !value;
+        controller.FreeCursor(value);
     }
 
     void SelectActor()
@@ -32,9 +39,6 @@ public class Interactor : MonoBehaviour
             if (actor != null && Input.GetKeyDown(interact_key))
             {
                 Debug.Log(actor.character.name);
-                controller.enableCameraMovement = false;
-                controller.playerCanMove = false;
-                controller.FreeCursor(true);
                 storyManager.ShowUI(true);
                 storyManager.LoadChunk(actor.character.sceneName);
             }
