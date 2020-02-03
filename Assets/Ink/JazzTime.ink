@@ -862,7 +862,7 @@ Ya found me three new mafios? Well blame! They said it couldn't happen!
 
 =QuestRealDone
 ~mafiaquesthandler = 1
-~inventory += Enriched_Plutonium_Gasket
+~inventory += Atomic_Flange
 ~dondoor = 1
 Here's that mechanical part I talked about - make good use'a it. Also, the Don wants t' see ya - don't leave him waitin'!
 ->start
@@ -1041,7 +1041,7 @@ The impact left you unconscious, and when you came to, you found that a number o
 }
 
 =Press
-~FinalQuest = 4
+~economyrestarted = 1
 (You press the button twice. Somewhere a cash register dings.
 
 Congratulations! You restarted the economy!)
