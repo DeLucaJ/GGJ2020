@@ -408,6 +408,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Crosshair
       value: 
+      objectReference: {fileID: 21300000, guid: f2ac70b0103670d4ea86c2b632fa8956,
+        type: 3}
+    - target: {fileID: 5955662942144609829, guid: dd355faad51d74c44999178affdedbd4,
+        type: 3}
+      propertyPath: autoCrosshair
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5995402837144261883, guid: dd355faad51d74c44999178affdedbd4,
         type: 3}
