@@ -21,7 +21,9 @@ VAR economyrestarted = 0
 VAR mafiadoor =0
 VAR flapdoor = 0
 VAR dondoor = 0
-LIST inventory = feather, sweat, dress
+VAR maindoor =0
+VAR sweat =0
+LIST inventory = feather, dress
 
 LIST machineparts = Atomic_Flange, Enriched_Plutonium_Gasket, Flapper_Seal, Temporal_Fill_Valve, Time_Tommy_Gun
 
@@ -85,6 +87,7 @@ LIST machineparts = Atomic_Flange, Enriched_Plutonium_Gasket, Flapper_Seal, Temp
 +[StonkMafio]->StonkMafio
 +[TimeMachine]->TimeMachine
 +[FullGameIntro]->FullGameIntro
++[TheButton]->TheButton
 
 End Conversation #noconvo
 
@@ -128,6 +131,7 @@ What, you actually managed to get the others to help? Wow, that's the best news 
 +[Thanks. Medium Michael's quitting. He said he wants to fish.]->Mike
 
 =Mike
+~maindoor =1
 Mike's quitting? Rats, he's our best fisherman. Oh, well, I guess we're all going to have to learn to fend for ourselves anyway, what with the economy crashing and all. Oh, and let me get the door for you.
 (Big Barry snaps his fingers)
 The door's unlocked. Careful, though - things have gotten pretty weird deeper in the building. You'll see what I mean.
@@ -165,8 +169,9 @@ I'd be upset that you just caused the Great Depression, but I'm too busy not wor
 ->start
 
 ==Stonk2==
+~ booze = booze + 1
 ~ speaker = "Stonk Broker"
-If there's one thing I love doing, it's not working. Thanks for crashing the economy!
+If there's one thing I love doing, it's not working. Thanks for crashing the economy! Have a bottle of scotch!
 ->start
 
 ==Stonk3==
@@ -320,13 +325,13 @@ What, like all fishermen? That's a pretty broad generalization. Come talk to me 
 =ReConvo
 Uh... hm... Zip? Horsefeathers? No, I don't think either of those mean anything. Hm...
 {
--deitzquest == "sweat" && inventory !=sweat:
+-deitzquest == "sweat" && sweat!=1:
 +[Hey, Marv? Can I have some of your sweat?]->MarvSweat
 }
 ->start
 
 =MarvSweat
-~inventory += sweat
+~sweat = 1
 (Marv thinks for a moment)
 All right.
 (He flexes every muscle in his body, all at once, and a single drop of sweat rolls off his brow. You catch it in your hands)
@@ -363,7 +368,7 @@ Wowee, that's harsh!
 ->Trailoff
 -QueenTalk ==1 && booze <3 && booze >0:
 ->ReturnTalk2
--booze ==3:
+-booze >2 && FlapComplete !=1:
 ->ReturnTalk3
 -FlapComplete ==1:
 ->QuestDoneTalk
@@ -480,7 +485,8 @@ Left, two, three, and turn, and right, two three... four? Two? Damn it. Er, thre
 
 ==Flap5
 ~ speaker = "Flapper"
-I winsh I could shtop drinking, but being shober ishn't how you relacksh. I can't feel my toesh. Bottomsh up, hun! *hic*
+~booze= booze+1
+I winsh I could shtop drinking, but being shober ishn't how you relacksh. I can't feel my toesh. Bottomsh up, hun! *hic* Here, have one! Meansh I don't hafta drink sho many!
 ->start
 
 ==Flap6
@@ -529,15 +535,19 @@ Darling, your dress is GORGEOUS! Goodness, why aren't you inside already? Go on,
 {
 -booze == 0:
 ->IntroText
--booze > 0:
+-booze > 0 && FlapComplete !=1:
 ->BrandyMad
--FlapComplete ==1 && booze ==3:
+-FlapComplete ==1 && booze >2:
 ->BrandyFinal
 }
 
 =BrandyFinal
 Perhaps there's a lesson to be learned here: don't talk to time travelers. Leave me alone!
-->start
+{
+-deitzquest == "feather":
++[Hey, can I have the feather? Like the one on your head?]->FeatherHandler
+}
++[End Conversation]->NoHUD
 
 =BrandyMad
 Hang on a moment. Is that... do you have alcohol on you? Is that scotch? Bourbon? (She sniffs deeply)
@@ -649,9 +659,11 @@ Yes? Have you acquired my feather yet?
 +[No, not yet]->GetIt
 =FeatherFinal
 Good, good. Let me check my ingredient list...
-{inventory !=sweat:
+{
+-sweat !=1:
 ~deitzquest = "sweat"
 We still need the stonk broker sweat. Find the sweat of a man who is particularly twitchy.
+->start
 -else:
 ->GotItAll
 }
@@ -663,7 +675,8 @@ Then why are you here talking to me?
 
 =sweatfeedback
 The sweat? Do you have it?
-{inventory == sweat:
+{
+-sweat ==1:
 +[Yep, got it right here.]->SweatFinal
 }
 +[No, not yet]->GetIt
@@ -673,6 +686,7 @@ Excellent. Let me check my remaining item requirement...
 {inventory !=feather:
 ~deitzquest = "feather"
 I still need the feather of a particularly embittered Flapper. Be warned - it may take some doing. 
+->start
 -else:
 ->GotItAll
 }
@@ -766,8 +780,11 @@ I - oh, forgive me, I was composing a sonnet.
 ->start
 
 ==Squat5
+~ booze = booze + 1
 ~ speaker = "Squatter"
 The scarcity of this modern age allows me to reflect on the fortunes that I have had. Though I may consume the rotted skins of moldering potatoes for most of my daily bread, I can at least, through suffering, find transcendence. 
+
+Want some booze? Here. Take one.
 ->start
 
 ==Squat6
@@ -983,31 +1000,27 @@ If you think you have enough machine parts, you can try to return to the 21st ce
 You attempt to turn the time machine on. With none of its parts replaced, it coughs once, makes a few deep, wracking noises, and then proceeds to EXPLODE.
 
 You're relatively unscathed, but you're also trapped in the '20s with an economic depression that you caused and probably one or two grumpy people. Have fun!
--> END
-//->start
+->END
 
 =BadEnd
 You activate the time machine. As you've only placed a couple parts back where they were supposed to go it doesn't sound quite right... but it's probably fine.
 The machine shudders, the flow of time begins - and stops. Funny, that felt a little quick. As you step outside your machine you realize that you've traveled about a week into the future. Maybe it was enough time for everyone to forget that you caused the Great Depression? They probably forgot, right?
 Good luck!
--> END
-//->start
+->END
 
 =OKEnd
 You've found most of your parts - the machine might not work well, but it should be enough to take you back to the present.
 As you step into the machine you feel time flow around you - but after a few minutes of travel you feel the machine stop in a juttering crash!
 As you step out of the machine you realize that you've returned almost to the present, but a few years too early - late 2007, says the readout in your machine. And what is this - but your machine has crashed into the entire supply of money to all of the banks in America!
 Oh, no! You caused the Great Recession!
--> END
-// ->start
+->END
 
 =GoodEnd
 With all its parts replaced, your time machine doesn't just hum - it sings. You step into the time machine and turn the dial, and in no more than a few minutes you've returned to the futuristic year of 2012. 
 Ahh, thank god for the future! No more economic peril, no concerns about war or political corruption - just the good ol' present!
 ...
 Welp, that's enough of that. Time to go back in the time machine!
--> END
-// ->start
+->END
 
 ==FullGameIntro
 ~ speaker = "start"
@@ -1015,5 +1028,21 @@ Oh dear! You seem to have crashed your time machine into the New York stock exch
 The impact left you unconscious, and when you came to, you found that a number of your time machine parts were missing! Better go find them, unless you fancy trying your luck with the space-time continuum. It's proabably pretty flexible, right?
 +[Start]->NoHUD
 
+==TheButton
+~speaker = "button"
+{
+-FinalQuest !=3:
+(Some kind of button. You have no idea what it does)
++[End Conversation]->NoHUD
+-FinalQuest ==3:
+(This must be the button Dietz was talking about. Pressing it should restart the economy)
++[Press it]->Press
++[Back]->NoHUD
+}
 
+=Press
+~FinalQuest = 4
+(You press the button twice. Somewhere a cash register dings.
 
+Congratulations! You restarted the economy!)
+->start

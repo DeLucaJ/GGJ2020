@@ -384,6 +384,31 @@ PrefabInstance:
       propertyPath: dynamicFootstep.customPhysMat
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5955662942144609829, guid: dd355faad51d74c44999178affdedbd4,
+        type: 3}
+      propertyPath: canJump
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955662942144609829, guid: dd355faad51d74c44999178affdedbd4,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955662942144609829, guid: dd355faad51d74c44999178affdedbd4,
+        type: 3}
+      propertyPath: useHeadbob
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955662942144609829, guid: dd355faad51d74c44999178affdedbd4,
+        type: 3}
+      propertyPath: useStamina
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955662942144609829, guid: dd355faad51d74c44999178affdedbd4,
+        type: 3}
+      propertyPath: Crosshair
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5995402837144261883, guid: dd355faad51d74c44999178affdedbd4,
         type: 3}
       propertyPath: storyManager
@@ -659,7 +684,7 @@ PrefabInstance:
     - target: {fileID: 4846204569990174500, guid: 55e1b16e003fae447b7d85b8aa9879aa,
         type: 3}
       propertyPath: m_Value
-      value: 1.0000002
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5573180488999615091, guid: 55e1b16e003fae447b7d85b8aa9879aa,
         type: 3}
