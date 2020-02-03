@@ -916,9 +916,9 @@ Don't make me play my "violin" at you, baby! If you get what I'm sayin'!...I'm s
 ==ThatBoy
 ~ speaker = "The Don"
 {
--economyrestarted ==0:
+-economyrestarted ==0 && FinalQuest == 0:
 ->Intro
--economyrestarted ==0 && FinalQuest <3 && FinalQuest >0:
+-economyrestarted ==0 && (FinalQuest < 3 && FinalQuest > 0):
 ->Middlemafio
 -economyrestarted ==1 && FinalQuest !=4:
 ->Pleasedmafio
@@ -989,9 +989,9 @@ If you think you have enough machine parts, you can try to return to the 21st ce
 {
 -LIST_COUNT(machineparts) ==0:
 ->WorstEnd
--LIST_COUNT(machineparts) <3 >0:
+-LIST_COUNT(machineparts) ==2 || LIST_COUNT(machineparts) == 1:
 ->BadEnd
--LIST_COUNT(machineparts) <2 >5:
+-LIST_COUNT(machineparts) ==3 || LIST_COUNT(machineparts) == 4:
 ->OKEnd
 -LIST_COUNT(machineparts) == 5:
 ->GoodEnd
