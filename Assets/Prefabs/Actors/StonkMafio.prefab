@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053909725a5d9bb43a1c966421375414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {x: 78, y: -61.3, z: 16.8}
+  destination: {x: 78, y: -61, z: 16.8}
   sm: {fileID: 0}
   popinVariable: stonckmafio
 --- !u!1001 &8622391204643574581
