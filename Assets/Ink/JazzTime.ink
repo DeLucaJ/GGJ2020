@@ -537,7 +537,7 @@ Darling, your dress is GORGEOUS! Goodness, why aren't you inside already? Go on,
 ->IntroText
 -booze > 0 && FlapComplete !=1:
 ->BrandyMad
--FlapComplete ==1 && booze ==3:
+-FlapComplete ==1 && booze >2:
 ->BrandyFinal
 }
 
