@@ -16,7 +16,7 @@ ScriptedImporter:
     generateAllOutputs: 0
     generateMipMaps: 1
     preset: " <sbspreset pkgurl=\"pkg://art_deco_lobby_ceiling\" label=\"\" >\n 
-      <presetinput identifier=\"$outputsize\" uid=\"2304818179\" type=\"8\" value=\"9,9\"
+      <presetinput identifier=\"$outputsize\" uid=\"2304818179\" type=\"8\" value=\"11,11\"
       />\n </sbspreset>\n"
     shaderName: Standard
     materialProperties:
@@ -274,8 +274,8 @@ ScriptedImporter:
     - label: Default
       bOverride: 0
       bLockRatio: 1
-      textureWidth: 512
-      textureHeight: 512
+      textureWidth: 2048
+      textureHeight: 2048
       textureFormatMode: 0
       normalCompressed: 0
       bGenerateOnLoad: 1
