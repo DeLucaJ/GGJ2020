@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-    
+﻿using UnityEngine;
+
 public class Interactor : MonoBehaviour
 {
     public float raydistance;
@@ -52,6 +50,20 @@ public class Interactor : MonoBehaviour
         }
     }
 
+    void PickupItem(Pickup p)
+    {
+        if (p.isInventory)
+        {
+            storyManager.im.AddItem(p.storyVar);
+        }
+        else
+        {
+            storyManager.story.variablesState[p.storyVar] = (int)storyManager.story.variablesState[p.storyVar] + 1;
+        }
+        Debug.Log("Pickedup " + p.storyVar);
+        Destroy(p.gameObject);
+    }
+
     void SelectActor()
     {
         Ray selector = camera.ViewportPointToRay(Vector3.one / 2f);
@@ -60,7 +72,7 @@ public class Interactor : MonoBehaviour
         {
             Actor actor = hit.collider.GetComponent<Actor>();
             Teleporter tp = hit.collider.GetComponent<Teleporter>();
-            Pickup p = hit.collider.GetComponent<Pickup>();
+            Pickup pickup = hit.collider.GetComponent<Pickup>();
             if (actor != null && Input.GetKeyDown(interact_key))
             {
                 EnterConversation(actor);
@@ -69,9 +81,10 @@ public class Interactor : MonoBehaviour
             {
                 Teleport(tp.destination.position, tp.canTeleport);
             }
-            if (p!= null && Input.GetKeyDown(interact_key))
+            if (pickup != null && Input.GetKeyDown(interact_key))
             {
-                p.PickupItem();
+                Debug.Log("Begin Pickup");
+                PickupItem(pickup);
             }
         }
     }
