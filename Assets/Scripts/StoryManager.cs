@@ -125,7 +125,7 @@ public class StoryManager : MonoBehaviour
         else
         {
             Button restart = CreateChoiceView("The End.\n Replay?");
-            restart.onClick.AddListener(delegate { SceneManager.LoadScene(SceneManager.GetActiveScene().name); });
+            restart.onClick.AddListener(delegate { SceneManager.LoadScene("Menu", LoadSceneMode.Single); });
         }
         LoadSpeaker();
     }
