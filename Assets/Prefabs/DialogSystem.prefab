@@ -318,17 +318,17 @@ PrefabInstance:
     - target: {fileID: 1235033087837487807, guid: 7bf2e7186fcb280409e04657025f0ad6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1235033087837487807, guid: 7bf2e7186fcb280409e04657025f0ad6,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1235033087837487807, guid: 7bf2e7186fcb280409e04657025f0ad6,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1235033087837487807, guid: 7bf2e7186fcb280409e04657025f0ad6,
         type: 3}
@@ -409,6 +409,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908490818613465403, guid: 7bf2e7186fcb280409e04657025f0ad6,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5908490818613465403, guid: 7bf2e7186fcb280409e04657025f0ad6,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7750226122095175268, guid: 7bf2e7186fcb280409e04657025f0ad6,
         type: 3}
