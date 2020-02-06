@@ -16,7 +16,6 @@ public class StoryManager : MonoBehaviour
     public bool showingUI = false;
 
     // UI Prefabs
-    public InventoryManager im;
     [SerializeField]
     private Interactor player;
     [SerializeField]
@@ -28,17 +27,11 @@ public class StoryManager : MonoBehaviour
     [SerializeField]
     private Button buttonPrefab;
 
-    // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         RemoveChoices();
         StartStory();
-        // 
-    }
-
-    void Start()
-    {
-        LoadChunk("FullGameIntro");
+        ShowUI(false);
     }
 
     public void ShowUI(bool value)

@@ -53,20 +53,6 @@ public class Interactor : MonoBehaviour
         }
     }
 
-    void PickupItem(Pickup p)
-    {
-        if (p.isInventory)
-        {
-            storyManager.im.AddItem(p.storyVar);
-        }
-        else
-        {
-            storyManager.story.variablesState[p.storyVar] = (int)storyManager.story.variablesState[p.storyVar] + 1;
-        }
-        Debug.Log("Pickedup " + p.storyVar);
-        Destroy(p.gameObject);
-    }
-
     void SelectActor()
     {
         Ray selector = camera.ViewportPointToRay(Vector3.one / 2f);
@@ -75,9 +61,8 @@ public class Interactor : MonoBehaviour
         {
             Actor actor = hit.collider.GetComponent<Actor>();
             Teleporter tp = hit.collider.GetComponent<Teleporter>();
-            Pickup pickup = hit.collider.GetComponent<Pickup>();
             
-            if (!showingMessage && (actor != null || tp != null || pickup != null))
+            if (!showingMessage && (actor != null || tp != null))
             {
                 interactMessage.gameObject.SetActive(true);
                 showingMessage = true;
@@ -89,10 +74,6 @@ public class Interactor : MonoBehaviour
                 {
                     interactMessage.text = "Press E to Enter";
                 }
-                if (pickup != null)
-                {
-                    interactMessage.text = "Press E to Pickup";
-                }
             }
 
             if (actor != null && Input.GetKeyDown(interact_key))
@@ -102,10 +83,6 @@ public class Interactor : MonoBehaviour
             if (tp != null && Input.GetKeyDown(interact_key))
             {
                 Teleport(tp.destination.position, tp.canTeleport);
-            }
-            if (pickup != null && Input.GetKeyDown(interact_key))
-            {
-                PickupItem(pickup);
             }
         }
         else

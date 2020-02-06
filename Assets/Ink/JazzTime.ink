@@ -495,7 +495,9 @@ Brandy's cut me off - she's the worst, but you have to love her - if you could g
 
 =Confirm
 ~ QueenTalk = 1
-Lovely, honey. I'll be waiting...
+Lovely, honey. You might want to ask around all of the rooms - a lot of people have bottles squirreled away, Prohibition or no. 
+
+Hurry back. I'll be waiting...
 ->start
 
 ->start
@@ -876,6 +878,7 @@ I - oh, forgive me, I was composing a sonnet.
 ->start
 
 ==Squat5
+~ speaker = "Squatter"
 {
 -visitsquat !=1:
 ~ booze = booze + 1
@@ -1103,7 +1106,7 @@ You know, I thought things'd be easier here, but we still deal with a lot of pen
 ->start
 
 ==TimeMachine
-~speaker = "End"
+~speaker = "endgame"
 If you think you have enough machine parts, you can try to return to the 21st century. If you don't have all 5 parts, however, there's no telling what might happen when you turn it on!
 +[Activate Time Machine]->TimeHandler
 +[Back]->NoHUD
