@@ -66,14 +66,6 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!222 &8199580926760536826
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1662585379752952486}
-  m_CullTransparentMesh: 0
 --- !u!1 &8030942676870260123
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +800,7 @@ PrefabInstance:
     - target: {fileID: 7293770204491580438, guid: 55e1b16e003fae447b7d85b8aa9879aa,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7293770204491580438, guid: 55e1b16e003fae447b7d85b8aa9879aa,
         type: 3}
@@ -823,17 +815,17 @@ PrefabInstance:
     - target: {fileID: 7293770204491580438, guid: 55e1b16e003fae447b7d85b8aa9879aa,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7293770204491580438, guid: 55e1b16e003fae447b7d85b8aa9879aa,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7293770204491580438, guid: 55e1b16e003fae447b7d85b8aa9879aa,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7769174972950098918, guid: 55e1b16e003fae447b7d85b8aa9879aa,
         type: 3}
@@ -871,9 +863,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ec9a72bafd7974593e2523938a27be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1662585379752952486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8674235560132018230, guid: 55e1b16e003fae447b7d85b8aa9879aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 8030942677288993424}
-  m_PrefabAsset: {fileID: 0}

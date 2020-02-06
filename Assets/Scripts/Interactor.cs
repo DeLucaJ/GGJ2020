@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Interactor : MonoBehaviour
 {
@@ -8,13 +9,15 @@ public class Interactor : MonoBehaviour
     public LayerMask layerMask;
     public StoryManager storyManager;
     public FirstPersonAIO controller;
+    public Text interactMessage;
 
     private bool canInteract = true;
+    private bool showingMessage = false;
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        
     }
 
     // Update is called once per frame
@@ -73,6 +76,25 @@ public class Interactor : MonoBehaviour
             Actor actor = hit.collider.GetComponent<Actor>();
             Teleporter tp = hit.collider.GetComponent<Teleporter>();
             Pickup pickup = hit.collider.GetComponent<Pickup>();
+            
+            if (!showingMessage && (actor != null || tp != null || pickup != null))
+            {
+                interactMessage.gameObject.SetActive(true);
+                showingMessage = true;
+                if (actor != null) 
+                {
+                    interactMessage.text = "Press E to Talk";
+                }
+                if (tp != null)
+                {
+                    interactMessage.text = "Press E to Enter";
+                }
+                if (pickup != null)
+                {
+                    interactMessage.text = "Press E to Pickup";
+                }
+            }
+
             if (actor != null && Input.GetKeyDown(interact_key))
             {
                 EnterConversation(actor);
@@ -83,8 +105,15 @@ public class Interactor : MonoBehaviour
             }
             if (pickup != null && Input.GetKeyDown(interact_key))
             {
-                Debug.Log("Begin Pickup");
                 PickupItem(pickup);
+            }
+        }
+        else
+        {
+            if (showingMessage) 
+            {
+                interactMessage.gameObject.SetActive(false);
+                showingMessage = false;
             }
         }
     }
