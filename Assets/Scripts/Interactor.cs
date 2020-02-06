@@ -24,6 +24,11 @@ public class Interactor : MonoBehaviour
     void Update()
     {
         SelectActor();
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
     }
 
     public void FreezeMovement(bool value)

@@ -28,6 +28,7 @@ VAR sweatactivate =0
 VAR visitstonk = 0
 VAR visitflap = 0
 VAR visitsquat = 0
+VAR firstactivate = 0
 LIST inventory = feather, dress
 
 LIST machineparts = Atomic_Flange, Enriched_Plutonium_Gasket, Flapper_Seal, Temporal_Fill_Valve, Time_Tommy_Gun
@@ -1107,6 +1108,19 @@ You know, I thought things'd be easier here, but we still deal with a lot of pen
 
 ==TimeMachine
 ~speaker = "endgame"
+{
+-firstactivate ==0:
+->FirstActivate
+-else:
+->NormalActivate
+}
+=FirstActivate
+Oh dear! You seem to have crashed your time machine into the New York stonk exchange! It happens to the best of us.
+~firstactivate = 1
+The impact left you unconscious, and when you came to, you found that a number of your time machine parts were missing! Better go find them, unless you fancy trying your luck with the space-time continuum. It's proabably pretty flexible, right?
++[Start]->NoHUD
+
+=NormalActivate
 If you think you have enough machine parts, you can try to return to the 21st century. If you don't have all 5 parts, however, there's no telling what might happen when you turn it on!
 +[Activate Time Machine]->TimeHandler
 +[Back]->NoHUD
