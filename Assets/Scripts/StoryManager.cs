@@ -24,6 +24,8 @@ public class StoryManager : MonoBehaviour
     [SerializeField]
     private Text speakerbox;
     [SerializeField]
+    private Text cutscenebox;
+    [SerializeField]
     private Button buttonPrefab;
 
     // Start is called before the first frame update
@@ -31,7 +33,12 @@ public class StoryManager : MonoBehaviour
     {
         RemoveChoices();
         StartStory();
-        ShowUI(false);
+        // 
+    }
+
+    void Start()
+    {
+        LoadChunk("FullGameIntro");
     }
 
     public void ShowUI(bool value)
@@ -81,8 +88,6 @@ public class StoryManager : MonoBehaviour
             text = story.ContinueMaximally();
         }
         LoadSpeaker();
-        // Debug.Log(text);
-        // Debug.Log(speakerbox.text);
         return text;
     }
 

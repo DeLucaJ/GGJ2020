@@ -369,6 +369,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8030942676874887426}
     m_Modifications:
+    - target: {fileID: 5914960581461928441, guid: dd355faad51d74c44999178affdedbd4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5955662942144609829, guid: dd355faad51d74c44999178affdedbd4,
         type: 3}
       propertyPath: dynamicFootstep.grassPhysMat
@@ -478,6 +483,11 @@ PrefabInstance:
     - target: {fileID: 5997737399055633353, guid: dd355faad51d74c44999178affdedbd4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275533083461005124, guid: dd355faad51d74c44999178affdedbd4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
